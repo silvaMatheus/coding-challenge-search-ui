@@ -1,99 +1,45 @@
-# Search UI Code Challenge
+[![Video Demonstration](/public/preview.png)](https://youtu.be/lTfzbdwtSiI "Search UI Code Challenge")
 
-Welcome to the Search UI coding challenge. You will be asked to build a small
-application demonstrating your abilities in React and TypeScript. This challenge
-is targeted towards mid to senior level engineers.
+# Search UI Code Challenge - Submission
 
-## Instructions
+This repository contains my submission for the Search UI coding challenge, aimed at showcasing my proficiency in React and TypeScript. The primary objective of this challenge was to design and implement a simple yet functional search interface that allows users to explore financial topics efficiently. Throughout the development process, my goal was to not only meet the specified requirements but also to create a user experience that is intuitive, responsive, and accessible.
 
-1. Clone this repository to your local machine
-2. Create a new private repository on GitHub so others can't copy your work
-3. Push your local clone up to your private repository while preserving history
-4. Create a simple UI that meets the requirements below
-5. Add `jeromedane` as a viewer
+## Objective and Achievement
 
-### Additional Notes
+The challenge was to build a small application that demonstrates the ability to work with modern web technologies, particularly focusing on React and TypeScript. I aimed to create a search UI that provides users with quick and relevant results.
 
-- Use any libraries you like, keeping performance and bundle size in mind
-- Use any UI framework you like, but don't spend too much time here
-- This challenge should only take an hour or two
+The resulting application meets all the outlined scenarios, a loading state during data retrieval, and a clear presentation of search results with the capability to open result URLs in a new tab. Special attention was given to marking each search result with its content type (video, playlist, or blog post), enhancing the user's ability to find the type of content they prefer.
 
-## Development
+## Development Process
 
-Install dependencies using `npm install`.
+The development process began with setting up the project structure and installing the necessary dependencies. Following best practices, I structured the application to separate concerns, making use of modular components and hooks for clean and maintainable code.
 
-Run `npm start` to concurrently start the server and UI in development mode.
+- **UI Design:** Utilized Tailwind CSS for styling to rapidly develop a clean and responsive layout. Radix UI components were integrated where accessibility was paramount.
+- **State Management and Data Fetching:** Chose React Query for its powerful data synchronization capabilities, allowing the application to fetch, cache, and update the search data with minimal boilerplate code.
+- **Testing:** Wrote unit tests using React Testing Library to ensure the reliability of the UI components, while Cypress was used for end-to-end testing to validate the application's functionality as a whole.
 
-Open [http://localhost:3000](http://localhost:3000) to view the UI in the
-browser. The page will reload if you make edits.
+## Technologies Used
 
-### API
+This project is built using a number of cutting-edge technologies and libraries:
 
-- The API server is run on port `3001` while the React UI is run on port `3000`
-- Your UI can call `/api/data?search=[some-query]` directly since
-  the request will be proxied to `http://localhost/api/data?...`
-- You will to need access the API on port `3001` if you're testing it directly
-  from outside your application (e.g. http://localhost:3001/api/data?search=credit)
+- TypeScript for static type checking.
+- Tailwind CSS for utility-first CSS styling.
+- Radix UI for accessible UI components such as icons, scroll areas, slots, and toasts.
+- React Query for fetching, caching, and updating asynchronous data.
+- Cypress for end-to-end testing.
 
-## The Problem
+## Running the Project
 
-> As a consumer I want to research financial topics so I can make informed
-> decisions.
+After cloning the repository and navigating to the project directory, run the following commands:
 
-## Requirements
+- Install dependencies: `npm install`
+- Start the development: `npm start`
+  This command concurrently starts the React application and the Express server.
+- Access the application: Open [http://localhost:3000](http://localhost:3000) to view the UI in the browser.
 
-```
-Scenario: The application shall provide a search form
-  Given the user visits the application
-  Then a search field is displayed
-  And a button is displayed with the text "Search"
-```
+## Testing
 
-```
-Scenario: The search shall be triggerable by clicking the "Search" button
-  Given the user has entered a search query
-  When the user clicks the "Search" button
-  Then matching search results are displayed
-```
+This project is equipped with both unit and end-to-end testing frameworks:
 
-```
-Scenario: The search shall be triggerable by pressing the Enter key
-  Given the user has entered a search query
-  And the input field is currently focused
-  When the user clicks presses the Enter key on their keyboard
-  Then matching search results are displayed
-```
-
-```
-Scenario: A loading state shall be shown while search results are loading
-  Given the user has entered a search query
-  When the user submits their search
-  Then a loading state is shown until the search results are available
-```
-
-```
-Scenario: Search results shall show result title and description
-  Given a user has performed a search
-  When search results are displayed
-  Then the title and description of each search result are displayed
-```
-
-```
-Scenario: Clicking a search result title shall open its URLs in a new tab
-  Given search results are displayed
-  When a user clicks the title of a search result item
-  Then the URL of the search result is opened in a new tab
-```
-
-```
-Scenario: Search results shall be marked as their content type
-  Given search results are displayed
-  Then each result is clearly marked as a video, playlist, or blog post
-```
-
-```
-Scenario: The user shall be informed if no search results match their query
-  Given the user has performed a search
-  When there are no results matching their search query
-  Then the message "There are no results matching your query." is displayed
-```
+- To run unit tests: `npm test`
+- To execute end-to-end tests with Cypress: First, make sure the application is running, then execute `npx cypress open` for a GUI interface or `npx cypress run` for headless testing.
