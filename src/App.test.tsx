@@ -109,7 +109,7 @@ describe("SearchResults Component Rendering", () => {
     });
 
     await waitFor(() => {
-      const resultItems = screen.getAllByTestId("result-item");
+      const resultItems = screen.getAllByTestId("search-result");
       expect(resultItems.length).toBeGreaterThan(0);
     });
   });
