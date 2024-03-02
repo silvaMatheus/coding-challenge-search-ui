@@ -1,10 +1,11 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { search } from "../../services/search";
+import SearchResultProps from "../../types/searchResult.types";
 import { ScrollArea } from "../ui/scrol-area";
 import SearchResultItem from "./search-result-item";
 
 const SearchResults = ({ query }: { query: string }) => {
-  const { data: results, isLoading } = useSuspenseQuery({
+  const { data: results, isLoading } = useSuspenseQuery<SearchResultProps[]>({
     queryKey: ["searchResults", query],
     queryFn: () => search(query),
   });

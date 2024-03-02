@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 import { readFile } from "fs";
-import Fuse from "fuse.js"; // Assumindo que @types/fuse.js está disponível ou declare module 'fuse.js';
+import Fuse from "fuse.js";
 import { join } from "path";
 
 const app = express();

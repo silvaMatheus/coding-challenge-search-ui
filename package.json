@@ -35,13 +35,14 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"sudo react-scripts start\" \"sudo node server.js\"",
-    "server": "node server.js",
+    "start": "concurrently \"sudo react-scripts start\" \"sudo node server.ts\"",
+    "server": "node server.ts",
     "client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "type": "module",
   "eslintConfig": {
     "extends": [
       "react-app",
